@@ -15,10 +15,17 @@ header{
 }
 header .hamburger{
   display: none;
+  background: url(images/icon-hamburger.svg);
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
 }
-.hamburger svg{
-  position: relative;
-  z-index: 100;
+header .hamburger.active{
+  filter: invert(1);
+  background: url(images/icon-close.svg);
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
 }
 h1,h2,h3,h4{
   font-size: 2rem;
@@ -113,6 +120,7 @@ nav a:active{
     height: 0;
     overflow: hidden;
     background: hsla(229, 31%, 21%, 0.9);
+    transition: 0.5s ease-in-out;
   }
   nav ul.active{
     height: 100vh;
@@ -392,6 +400,15 @@ nav a:active{
 .accordion li:nth-child(1){
   border-top: 1px solid hsl(229, 8%, 60%);
 }
+.accordion li img{
+  cursor: pointer;
+  transform: rotate(180deg);
+  transition: 0.4s all ease-in-out;
+}
+.accordion li img.active{
+  transform: rotate(0deg);
+  filter: invert(1);
+}
 .accordion .text a{
   display: block;
   margin: 50px auto;
@@ -403,6 +420,7 @@ nav a:active{
 }
 .accordion h4{
   font-weight: 100;
+  cursor: pointer;
 }
 .accordion p{
   margin: 10px;
@@ -410,11 +428,18 @@ nav a:active{
   font-size: 1rem;
   line-height: 2rem;
   height: 0;
+  width: 0;
   overflow: hidden;
+  transition: 0.4s all ease-in-out;
+}
+.accordion p.active{
+  height: auto;
+  width: auto;
 }
 .question{
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 /* footer */
