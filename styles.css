@@ -16,6 +16,10 @@ header{
 header .hamburger{
   display: none;
 }
+.hamburger svg{
+  position: relative;
+  z-index: 100;
+}
 h1,h2,h3,h4{
   font-size: 2rem;
   font-weight: 600;
@@ -43,19 +47,27 @@ nav li{
   transition: all 0.3s ease-in-out;
 }
 nav li:nth-child(4){
-  border: 1px solid hsl(229, 31%, 21%);
-  border-left: 2px solid;
-  border-right: 2px solid;
+  border: 1px solid hsl(0, 94%, 66%);
+  background: hsl(0, 94%, 66%);
   border-radius: 3px;
-  padding: 5px 20px;
+  padding: 7px 20px;
   text-align: center;
   box-shadow: 2px 2px 4px hsla(229, 31%, 21%, 0.2);
 }
 nav li:nth-child(4):hover,
 nav li:nth-child(4):active{
-  border: 1px solid hsl(0, 94%, 66%);
-  border-left: 2px solid hsl(0, 94%, 66%);
-  border-right: 2px solid hsl(0, 94%, 66%);
+  border: 1px solid hsl(229, 31%, 21%);
+  background: none;
+  color: hsl(229, 31%, 21%);
+}
+nav li:nth-child(4) a{
+  padding: 5px;
+  color: #FFF;
+  font-size: 0.8rem;
+}
+nav li:nth-child(4) a:hover,
+nav li:nth-child(4) a:active{
+  color: hsl(229, 31%, 21%);
 }
 nav a{
   transition: all 0.3s ease-in-out;
@@ -78,6 +90,7 @@ nav a:active{
 }
 @media screen and (max-width: 570px){
   header{
+    background: #FFF;
     top: 0;
     position: sticky;
     justify-content: space-between;
@@ -121,6 +134,15 @@ nav a:active{
     padding: 10px;
     border-radius: 5px;
     border: 2px solid #EEE;
+  }
+  nav li:nth-child(4):hover,
+  nav li:nth-child(4):active{
+    color: #FFF;
+    border: 2px solid #FFF;
+  }
+  nav li:nth-child(4) a:hover,
+  nav li:nth-child(4) a:hover{
+    color: #FFF;
   }
   nav a{
     color: #EEE;
@@ -304,11 +326,17 @@ nav a:active{
   border: 1px solid hsl(231, 69%, 60%);
   border-radius: 3px;
   padding: 5px 15px;
+  transition: 0.3 all ease-in-out;
+}
+.card a:hover{
+  color: hsl(231, 69%, 60%);
+  background: #FFF;
+  border: 1px solid hsl(231, 69%, 60%);
 }
 .card_1,
 .card_2,
 .card_3{
-  
+
 }
 .card_2{
   margin: 0 20px;
@@ -335,4 +363,97 @@ nav a:active{
   .card_3{
     margin: 20px;
   }
+}
+/* Frequently asked Questions */
+#FAQ{
+  margin: 20px;
+  margin-top: 100px;
+}
+#FAQ .header h2{
+  text-align: center;
+}
+#FAQ .header p{
+  text-align: center;
+  margin: 20px auto;
+  max-width: 450px;
+}
+.accordion{
+  margin: 30px auto;
+  max-width: 500px;
+  /* text-align: center; */
+}
+.accordion ul{
+  list-style: none;
+}
+.accordion li{
+  padding: 20px 0;
+  border-bottom: 1px solid hsl(229, 8%, 60%);
+}
+.accordion li:nth-child(1){
+  border-top: 1px solid hsl(229, 8%, 60%);
+}
+.accordion .text a{
+  display: block;
+  margin: 50px auto;
+  text-align: center;
+  width: 100px;
+  color: #EEE;
+  background: hsl(231, 69%, 60%);
+  border: 1px solid hsl(231, 69%, 60%);
+}
+.accordion h4{
+  font-weight: 100;
+}
+.accordion p{
+  margin: 10px;
+  font-weight: 100;
+  font-size: 1rem;
+  line-height: 2rem;
+  height: 0;
+  overflow: hidden;
+}
+.question{
+  display: flex;
+  justify-content: space-between;
+}
+
+/* footer */
+footer{
+  padding: 50px 0;
+  margin-top: 100px;
+  background: hsl(231, 69%, 60%)
+}
+footer h1{
+  color: #FFF;
+  font-size: 0.9em;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+footer h2{
+  margin: 20px auto;
+  color: #FFF;
+  font-size: 2rem;
+  font-weight: 400;
+  text-align: center;
+  max-width: 450px;
+}
+footer form{
+ text-align: center;
+}
+form input{
+  padding: 10px;
+  width: 250px;
+  border: 1px solid #FFF;
+  border-radius: 3px;
+}
+form button{
+  padding: 10px;
+  border: 1px solid hsl(0, 94%, 66%);
+  background: hsl(0, 94%, 66%);
+  color: #FFF;
+  border-radius: 3px;
+  cursor: pointer;
+  margin: 0 10px;
 }
